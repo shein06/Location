@@ -1,0 +1,39 @@
+1. **Instal Termux**: Jika belum, instal aplikasi Termux dari Google Play Store atau F-Droid.
+  
+2. **Update dan Instal Curl**:
+   Buka Termux dan jalankan perintah berikut untuk memperbarui repositori dan menginstal `curl`:
+   ```bash
+   pkg update
+   pkg install curl
+   ```
+
+3. **Dapatkan Lokasi**:
+   Anda dapat menggunakan layanan geolokasi seperti `ipinfo.io` untuk mendapatkan lokasi berdasarkan alamat IP Anda. Jalankan perintah berikut:
+   ```bash
+   curl ipinfo.io
+   ```
+
+### Contoh Source Code
+
+Jika Anda ingin membuat script sederhana untuk melacak lokasi, Anda bisa menggunakan bash script berikut:
+
+```bash
+#!/bin/bash
+
+# Script untuk melacak lokasi menggunakan ipinfo.io
+echo "Melacak lokasi Anda..."
+LOCATION=$(curl -s ipinfo.io)
+echo "Informasi lokasi:"
+echo "$LOCATION"
+```
+
+### Cara Menjalankan Script
+
+1. Simpan script di atas ke dalam file, misalnya `track_location.sh`.
+2. Berikan hak akses eksekusi pada file tersebut:
+   ```bash
+   chmod +x track_location.sh
+   ```
+3. Jalankan script:
+   ```bash
+   ./track_location.sh
